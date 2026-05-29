@@ -217,6 +217,10 @@
       body { padding: 0; }
       a { text-decoration: none; color: inherit; }
       .contact a { color: var(--accent2); text-decoration: underline; }
+      .entry a { color: var(--accent2); text-decoration: none; }
+
+      /* Experience always starts on a fresh page so BMC Helix gets full width */
+      #experience { break-before: page; }
 
       /* Never leave a heading or label stranded alone at the bottom of a page */
       h2, .job-header, .project-label { break-after: avoid; }
@@ -313,9 +317,7 @@
   <div class="contact">
     Pune, India &nbsp;|&nbsp;
     +91 8983796852 &nbsp;|&nbsp;
-    <a href="mailto:tzabuawala@gmail.com">tzabuawala@gmail.com</a> &nbsp;|&nbsp;
-    <a href="https://linkedin.com/in/taha-zabuawala-1a02a330" target="_blank">LinkedIn</a> &nbsp;|&nbsp;
-    <a href="https://github.com/taha2009" target="_blank">GitHub</a>
+    <a href="mailto:tzabuawala@gmail.com">tzabuawala@gmail.com</a>
   </div>
 </header>
 
@@ -402,7 +404,36 @@
 <!-- ══════════════════════════════════════════
      PROFESSIONAL EXPERIENCE
 ══════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════
+     CERTIFICATIONS + EDUCATION
+══════════════════════════════════════════ -->
 <section>
+  <h2>Certifications &amp; Education</h2>
+  <div class="two-col">
+    <div>
+      <div class="entry">
+        <strong>AWS Certified Solutions Architect</strong>
+        <span>Amazon Web Services</span>
+      </div>
+      <div class="entry">
+        <strong>Certified Kubernetes Application Developer (CKAD)</strong>
+        <span>Cloud Native Computing Foundation</span>
+      </div>
+    </div>
+    <div>
+      <div class="entry">
+        <strong>B.Tech – Computer Science</strong>
+        <span>Rajasthan Technical University, Jaipur &nbsp;|&nbsp; 2009 – 2012</span>
+      </div>
+      <div class="entry">
+        <strong>Diploma – Computer Science</strong>
+        <span>TEB Gujarat, Dahod &nbsp;|&nbsp; 2006 – 2009</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
   <h2>Professional Experience</h2>
 
   <!-- BMC 2 -->
@@ -411,12 +442,7 @@
       <span class="job-title">Lead Product Developer – Gen AI</span>
       <span class="job-date">January 2025 – Present</span>
     </div>
-    <div class="job-company">BMC Software, Pune</div>
-
-    <p style="font-size:9.5pt; margin-bottom:7px; color:#333;">
-      Shipping AI-powered engineering products in Agile sprints using an AI-first workflow — Claude Code and GitHub
-      Copilot are core to daily development, code review, and architecture decisions.
-    </p>
+    <div class="job-company">BMC Helix, Pune</div>
 
     <div class="project-label">▸ Grafana Reports Generator Agent</div>
     <ul>
@@ -447,7 +473,6 @@
       <li>Led development of agentic AI solutions in <strong>Python (LangChain + LangGraph)</strong> for intelligent infrastructure analysis and natural language querying of observability data</li>
       <li>Built RAG pipelines with vector databases for automated root cause analysis, reducing mean-time-to-diagnosis</li>
       <li>Deployed multi-agent workflows as production REST APIs serving BI dashboards and Grafana integrations</li>
-      <li>Collaborated with cross-functional Agile teams to translate business requirements into AI-driven analytics features, presenting solutions to non-technical stakeholders</li>
     </ul>
 
     <div class="project-label">▸ Virtana Platform (SaaS Observability)</div>
@@ -459,7 +484,7 @@
   </div>
 
   <!-- Deutsche -->
-  <div class="job">
+  <div class="job" style="break-after: page;">
     <div class="job-header">
       <span class="job-title">Senior Software Engineer</span>
       <span class="job-date">February 2023 – August 2023</span>
@@ -469,9 +494,7 @@
     <div class="project-label">▸ SWIFT Payment Integration System</div>
     <ul>
       <li>Developed secure backend services for international SWIFT payment integration using <strong>Java and Spring Boot</strong></li>
-      <li>Built and optimized RESTful APIs for high-reliability, high-security financial transaction processing</li>
-      <li>Implemented CI/CD pipelines with Jenkins, automating deployments and reducing operational overhead</li>
-      <li>Worked in Agile sprints with geographically distributed cross-functional teams</li>
+      <li>Built and optimized RESTful APIs for high-reliability financial transaction processing across distributed teams</li>
     </ul>
   </div>
 
@@ -488,7 +511,6 @@
       <li>Built enterprise Log Analytics product for IT operations with APM and intelligent log correlation across distributed systems</li>
       <li>Developed high-performance, scalable <strong>Java</strong> applications handling large volumes of operational event data</li>
       <li>Designed CI/CD pipelines with Jenkins for automated testing and deployment across multiple environments</li>
-      <li>Contributed across the full development lifecycle in an Agile/Scrum environment, from data modelling to API design to deployment</li>
     </ul>
   </div>
 
@@ -502,40 +524,10 @@
 
     <div class="project-label">▸ E-Learning Platform</div>
     <ul>
-      <li>Developed full-stack web applications in PHP/CakePHP — data modelling, backend business logic, and user-facing UI for a learning management system serving thousands of learners</li>
-      <li>Built course management, user tracking, and assessment modules end-to-end</li>
+      <li>Built full-stack LMS in PHP/CakePHP — data modelling, backend logic, and UI for course management, user tracking, and assessments</li>
     </ul>
   </div>
 
-</section>
-
-<!-- ══════════════════════════════════════════
-     CERTIFICATIONS + EDUCATION
-══════════════════════════════════════════ -->
-<section>
-  <h2>Certifications &amp; Education</h2>
-  <div class="two-col">
-    <div>
-      <div class="entry">
-        <strong>AWS Certified Solutions Architect</strong>
-        <span>Amazon Web Services</span>
-      </div>
-      <div class="entry">
-        <strong>Certified Kubernetes Application Developer (CKAD)</strong>
-        <span>Cloud Native Computing Foundation</span>
-      </div>
-    </div>
-    <div>
-      <div class="entry">
-        <strong>B.Tech – Computer Science</strong>
-        <span>Rajasthan Technical University, Jaipur &nbsp;|&nbsp; 2009 – 2012</span>
-      </div>
-      <div class="entry">
-        <strong>Diploma – Computer Science</strong>
-        <span>TEB Gujarat, Dahod &nbsp;|&nbsp; 2006 – 2009</span>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- ══════════════════════════════════════════
@@ -553,8 +545,6 @@
         <strong>Marital Status</strong>
         <span>Married</span>
       </div>
-    </div>
-    <div>
       <div class="entry">
         <strong>Languages Known</strong>
         <span>English, Hindi, Gujarati</span>
@@ -562,6 +552,16 @@
       <div class="entry">
         <strong>Nationality</strong>
         <span>Indian</span>
+      </div>
+    </div>
+    <div>
+      <div class="entry">
+        <strong>LinkedIn</strong>
+        <span><a href="https://linkedin.com/in/taha-zabuawala-1a02a330" target="_blank">linkedin.com/in/taha-zabuawala-1a02a330</a></span>
+      </div>
+      <div class="entry">
+        <strong>GitHub</strong>
+        <span><a href="https://github.com/taha2009" target="_blank">github.com/taha2009</a></span>
       </div>
     </div>
   </div>
