@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Taha Zabuawala – Senior AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy:    #1a4480;
+      --blue:    #2e6db4;
+      --blue-lt: #e8f0fa;
+      --text:    #1a1a1a;
+      --muted:   #6b7280;
+      --border:  #e5e7eb;
+      --bg:      #f3f6fb;
+      --white:   #ffffff;
+      --sidebar-w: 270px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--navy);
+      color: #fff;
+      padding: 32px 40px;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .hero h1 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 6px;
+    }
+    .hero-tagline {
+      font-size: 13px;
+      color: #a8c4e8;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+    }
+    .btn-cv {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--white);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 20px;
+      border-radius: 6px;
+      white-space: nowrap;
+      transition: opacity 0.15s;
+    }
+    .btn-cv:hover { opacity: 0.9; }
+
+    /* ── Layout ── */
+    .layout {
+      max-width: 1100px;
+      margin: 32px auto;
+      display: grid;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      gap: 24px;
+      padding: 0 24px 48px;
+      align-items: start;
+    }
+
+    /* ── Sidebar ── */
+    .sidebar {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      position: sticky;
+      top: 24px;
+    }
+    .avatar-wrap {
+      background: var(--blue);
+      padding: 28px 24px 20px;
+      text-align: center;
+    }
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.3);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .avatar-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .avatar-title {
+      font-size: 11px;
+      color: #a8c4e8;
+      margin-top: 2px;
+    }
+
+    .sidebar-section {
+      padding: 18px 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .sidebar-section h3 {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #a8c4e8;
+      margin-bottom: 12px;
+    }
+
+    /* contact */
+    .contact-list { list-style: none; }
+    .contact-list li {
+      font-size: 12.5px;
+      color: #d1e3f8;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.4;
+    }
+    .contact-list li .ic {
+      flex-shrink: 0;
+      opacity: 0.7;
+      margin-top: 1px;
+    }
+    .contact-list a { color: #a8c4e8; }
+    .contact-list a:hover { color: #fff; }
+
+    /* skills in sidebar */
+    .skill-row { margin-bottom: 10px; }
+    .skill-row-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #a8c4e8;
+      margin-bottom: 4px;
+    }
+    .skill-row-vals {
+      font-size: 12px;
+      color: #d1e3f8;
+      line-height: 1.5;
+    }
+
+    /* edu / certs */
+    .sidebar-entry { margin-bottom: 12px; }
+    .sidebar-entry strong {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .sidebar-entry span {
+      font-size: 11.5px;
+      color: #a8c4e8;
+      line-height: 1.4;
+    }
+
+    /* ── Main ── */
+    .main { display: flex; flex-direction: column; gap: 20px; }
+
+    .card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 24px 28px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.04);
+    }
+
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--navy);
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--blue-lt);
+    }
+
+    /* summary */
+    .summary-text {
+      font-size: 14px;
+      color: #374151;
+      line-height: 1.7;
+    }
+
+    /* highlights */
+    .highlights-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .highlights-list li {
+      background: var(--blue-lt);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 6px 6px 0;
+      padding: 10px 14px;
+      font-size: 13.5px;
+      color: #1e3a5f;
+      line-height: 1.55;
+    }
+    .highlights-list li strong { color: var(--navy); }
+
+    /* experience */
+    .job { padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid var(--border); }
+    .job:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 2px;
+      flex-wrap: wrap;
+    }
+    .job-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .job-date {
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+      padding-top: 2px;
+    }
+    .job-company {
+      font-size: 13px;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    .project-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 12px 0 5px;
+    }
+    .job ul { padding-left: 18px; }
+    .job ul li {
+      font-size: 13.5px;
+      color: #374151;
+      margin-bottom: 4px;
+      line-height: 1.55;
+    }
+    .job ul li strong { color: var(--navy); font-weight: 600; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .layout {
+        grid-template-columns: 1fr;
+        padding: 0 16px 40px;
+        margin-top: 20px;
+      }
+      .sidebar { position: static; }
+      .hero { padding: 24px 20px; }
+      .hero h1 { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Hero ── -->
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>Taha Mansurbhai Zabuawala</h1>
+      <p class="hero-tagline">Senior Software Engineer &nbsp;·&nbsp; AI-First Engineering &nbsp;·&nbsp; LangChain / LangGraph &nbsp;·&nbsp; Python &amp; Java</p>
+    </div>
+    <a href="index.html" class="btn-cv">⬇ Download CV</a>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- ════════════════════════════
+       SIDEBAR
+  ════════════════════════════ -->
+  <aside class="sidebar">
+
+    <div class="avatar-wrap">
+      <div class="avatar">TZ</div>
+      <div class="avatar-name">Taha Zabuawala</div>
+      <div class="avatar-title">Lead AI Engineer · BMC Helix</div>
+    </div>
+
+    <!-- Contact -->
+    <div class="sidebar-section">
+      <h3>Contact</h3>
+      <ul class="contact-list">
+        <li><span class="ic">📍</span> Pune, India</li>
+        <li><span class="ic">📞</span> +91 8983796852</li>
+        <li><span class="ic">✉</span> <a href="mailto:tzabuawala@gmail.com">tzabuawala@gmail.com</a></li>
+        <li><span class="ic">💼</span> <a href="https://linkedin.com/in/taha-zabuawala-1a02a330" target="_blank">LinkedIn</a></li>
+        <li><span class="ic">🐙</span> <a href="https://github.com/taha2009" target="_blank">github.com/taha2009</a></li>
+      </ul>
+    </div>
+
+    <!-- Skills -->
+    <div class="sidebar-section">
+      <h3>Skills</h3>
+      <div class="skill-row">
+        <div class="skill-row-label">AI & LLM</div>
+        <div class="skill-row-vals">LangChain, LangGraph, CrewAI, Multi-agent, Prompt engineering, OpenAI, Claude, Mistral, MCP</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row-label">Retrieval & LLMOps</div>
+        <div class="skill-row-vals">RAG, ChromaDB, FAISS, Pinecone, LangSmith, Eval pipelines</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row-label">AI Dev Tooling</div>
+        <div class="skill-row-vals">Claude Code, GitHub Copilot, Cursor</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row-label">Backend</div>
+        <div class="skill-row-vals">Python, Java, Spring Boot, gRPC, REST APIs, Microservices</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row-label">Cloud & Infra</div>
+        <div class="skill-row-vals">AWS, Azure, GCP, Kubernetes, Docker, Helm, Terraform</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row-label">Data & DevOps</div>
+        <div class="skill-row-vals">PostgreSQL, MySQL, NoSQL, GitHub Actions, Jenkins, Agile</div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="sidebar-section">
+      <h3>Education</h3>
+      <div class="sidebar-entry">
+        <strong>B.Tech – Computer Science</strong>
+        <span>Rajasthan Technical University<br/>2009 – 2012</span>
+      </div>
+      <div class="sidebar-entry">
+        <strong>Diploma – Computer Science</strong>
+        <span>TEB Gujarat<br/>2006 – 2009</span>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="sidebar-section">
+      <h3>Certifications</h3>
+      <div class="sidebar-entry">
+        <strong>AWS Certified Solutions Architect</strong>
+        <span>Amazon Web Services</span>
+      </div>
+      <div class="sidebar-entry">
+        <strong>CKAD – Kubernetes App Developer</strong>
+        <span>Cloud Native Computing Foundation</span>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ════════════════════════════
+       MAIN
+  ════════════════════════════ -->
+  <main class="main">
+
+    <!-- Summary -->
+    <div class="card">
+      <div class="section-title">Professional Summary</div>
+      <p class="summary-text">
+        Senior Software Engineer with <strong>13+ years of experience</strong> and 3+ years specializing in
+        <strong>AI-first engineering</strong> — designing, shipping, and operating LLM-powered applications and agentic
+        systems using LangChain, LangGraph, and RAG pipelines. Strong full-stack backend in <strong>Python and Java</strong>,
+        with daily use of <strong>Claude Code, GitHub Copilot, and Cursor</strong> to move faster and ship production-ready
+        code. AWS Certified &amp; CKAD Certified. Proven track record of translating business requirements into reliable
+        AI-driven products and shipping incrementally in cross-functional Agile teams.
+      </p>
+    </div>
+
+    <!-- Career Highlights -->
+    <div class="card">
+      <div class="section-title">Career Highlights</div>
+      <ul class="highlights-list">
+        <li>Built production agentic AI systems at BMC Helix covering <strong>100+ enterprise Grafana dashboards</strong>, cutting report generation from hours to under 2 minutes — leading a team of 5 engineers from design to deployment</li>
+        <li>Designed and shipped <strong>multi-agent LLM workflows</strong> (LangChain + LangGraph) at two enterprise companies, integrating with REST APIs, SQL databases, vector stores, and BI platforms</li>
+        <li>Reduced infrastructure observability <strong>mean-time-to-diagnosis by ~40%</strong> at Virtana through RAG-powered root cause analysis agents deployed as production APIs</li>
+        <li>13+ years spanning the full stack — from Java/Spring Boot microservices and AWS infrastructure to LLM orchestration and LLMOps — with end-to-end ownership from development through Kubernetes deployment</li>
+      </ul>
+    </div>
+
+    <!-- Experience -->
+    <div class="card">
+      <div class="section-title">Professional Experience</div>
+
+      <!-- BMC Helix -->
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Lead Product Developer – Gen AI</span>
+          <span class="job-date">January 2025 – Present</span>
+        </div>
+        <div class="job-company">BMC Helix, Pune &nbsp;·&nbsp; Leading a team of 5 engineers</div>
+
+        <div class="project-label">▸ Grafana Reports Generator Agent</div>
+        <ul>
+          <li>Built an agentic AI system in <strong>Python (LangChain + LangGraph)</strong> that generates automated Grafana reports from natural language queries, covering <strong>100+ dashboards</strong> and reducing report generation from hours to under 2 minutes</li>
+          <li>Designed multi-agent workflow with function calling for dashboard discovery, query generation, data extraction, and report formatting</li>
+          <li>Developed RAG pipeline over Grafana schemas with LangSmith for observability, prompt versioning, and hallucination-resistant outputs</li>
+          <li>Deployed on Docker/Kubernetes; critically reviewed AI-generated code for correctness and security before merging</li>
+        </ul>
+
+        <div class="project-label">▸ Enterprise Knowledge Assistant & Document Intelligence</div>
+        <ul>
+          <li>Building enterprise knowledge assistant (LangChain + LangGraph) with hybrid RAG pipelines (ChromaDB + FAISS) for documentation search and support automation, with a full-stack React UI from data model to user interface</li>
+          <li>Designed end-to-end document pipeline: PDF ingestion → chunking → embeddings → vector store with hallucination reduction</li>
+          <li>Translated business requirements into AI-driven solutions and presented architecture to non-technical stakeholders</li>
+        </ul>
+      </div>
+
+      <!-- Virtana -->
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Senior Software Engineer</span>
+          <span class="job-date">August 2023 – January 2025</span>
+        </div>
+        <div class="job-company">Virtana, Pune &nbsp;·&nbsp; B2B SaaS – Infrastructure Observability</div>
+
+        <div class="project-label">▸ AI-Powered Observability & Analytics Agents</div>
+        <ul>
+          <li>Led development of agentic AI solutions in <strong>Python (LangChain + LangGraph)</strong> for intelligent infrastructure analysis, translating business requirements into AI-driven analytics features</li>
+          <li>Built RAG pipelines with vector databases for automated root cause analysis, reducing mean-time-to-diagnosis by ~40%</li>
+          <li>Deployed multi-agent workflows as production REST APIs serving BI dashboards and Grafana integrations</li>
+        </ul>
+
+        <div class="project-label">▸ Virtana Platform (SaaS Observability)</div>
+        <ul>
+          <li>Developed B2B SaaS observability platform backend using <strong>AWS (EKS, RDS, Lambda)</strong> with <strong>Java / Spring Boot</strong> microservices and <strong>gRPC</strong> inter-service communication</li>
+          <li>Automated cloud infrastructure provisioning with Terraform, Kubernetes/Helm, and GitLab CI/CD pipelines</li>
+          <li>Participated in on-call rotation to maintain platform reliability, SLA adherence, and rapid incident response</li>
+        </ul>
+      </div>
+
+      <!-- Deutsche -->
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Senior Software Engineer</span>
+          <span class="job-date">February 2023 – August 2023</span>
+        </div>
+        <div class="job-company">Deutsche India Private Limited, Pune &nbsp;·&nbsp; Deutsche Bank</div>
+
+        <div class="project-label">▸ SWIFT Payment Integration System</div>
+        <ul>
+          <li>Developed secure backend services for international SWIFT payment integration using <strong>Java and Spring Boot</strong></li>
+          <li>Built and optimized RESTful APIs for high-reliability financial transaction processing across distributed teams</li>
+        </ul>
+      </div>
+
+      <!-- BMC Software -->
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Senior Software Developer</span>
+          <span class="job-date">March 2017 – February 2023</span>
+        </div>
+        <div class="job-company">BMC Software, Pune</div>
+
+        <div class="project-label">▸ TrueSight Log Analytics</div>
+        <ul>
+          <li>Built enterprise Log Analytics product for IT operations with APM and intelligent log correlation across distributed systems</li>
+          <li>Developed high-performance, scalable <strong>Java</strong> applications handling large volumes of operational event data</li>
+          <li>Designed CI/CD pipelines with Jenkins for automated testing and deployment across multiple environments</li>
+        </ul>
+      </div>
+
+      <!-- eNyota -->
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Software Engineer (Full-Stack)</span>
+          <span class="job-date">October 2013 – March 2017</span>
+        </div>
+        <div class="job-company">eNyota Learning Pvt Ltd, Pune</div>
+
+        <div class="project-label">▸ E-Learning Platform</div>
+        <ul>
+          <li>Built full-stack LMS in PHP/CakePHP — data modelling, backend logic, and UI for course management, user tracking, and assessments</li>
+        </ul>
+      </div>
+
+      <!-- Kalpak -->
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Web Developer</span>
+          <span class="job-date">December 2012 – October 2013</span>
+        </div>
+        <div class="job-company">Kalpak Solutions, Pune</div>
+        <ul>
+          <li>Built and maintained client web applications using PHP, HTML, and CSS</li>
+        </ul>
+      </div>
+
+    </div><!-- /card experience -->
+
+  </main>
+</div><!-- /layout -->
+
+</body>
+</html>
