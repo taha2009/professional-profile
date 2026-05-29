@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Taha Zabuawala – Resume</title>
+  <style>
+    :root {
+      --accent:   #1a4480;   /* deep navy – headers, name, borders */
+      --accent2:  #2e6db4;   /* mid-blue – job titles, skill labels */
+      --accent3:  #e8f0fa;   /* pale blue – skill-group backgrounds */
+      --rule:     #1a4480;   /* section rule colour */
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', serif;
+      font-size: 10pt;
+      color: #1a1a1a;
+      background: #fff;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 36px 44px;
+      line-height: 1.5;
+    }
+
+    /* ── Header ── */
+    header {
+      text-align: center;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 3px solid var(--accent);
+    }
+    header h1 {
+      font-size: 22pt;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+      color: var(--accent);
+    }
+    .headline {
+      font-family: 'Arial', sans-serif;
+      font-size: 9.5pt;
+      color: #555;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .contact {
+      font-family: 'Arial', sans-serif;
+      font-size: 9pt;
+      color: #444;
+    }
+    .contact a { color: var(--accent2); text-decoration: none; }
+
+    /* ── Section ── */
+    section { margin-bottom: 16px; }
+    h2 {
+      font-family: 'Arial', sans-serif;
+      font-size: 10pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
+      border-bottom: 1.5px solid var(--rule);
+      padding-bottom: 3px;
+      margin-bottom: 10px;
+    }
+
+    /* ── Summary ── */
+    .summary p { margin-bottom: 8px; }
+
+    /* ── Skills grid ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 20px;
+    }
+    .skill-group {
+      background: var(--accent3);
+      border-left: 3px solid var(--accent2);
+      padding: 6px 9px;
+      border-radius: 0 3px 3px 0;
+    }
+    .skill-group strong {
+      font-family: 'Arial', sans-serif;
+      font-size: 9pt;
+      display: block;
+      margin-bottom: 4px;
+      color: var(--accent);
+    }
+    .skill-group p {
+      font-size: 9.5pt;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    /* ── Experience ── */
+    .job { margin-bottom: 14px; }
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+    .job-title {
+      font-family: 'Arial', sans-serif;
+      font-weight: bold;
+      font-size: 10pt;
+      color: var(--accent2);
+    }
+    .job-date {
+      font-family: 'Arial', sans-serif;
+      font-size: 9pt;
+      color: #777;
+      white-space: nowrap;
+    }
+    .job-company {
+      font-family: 'Arial', sans-serif;
+      font-size: 9.5pt;
+      color: #555;
+      margin-bottom: 6px;
+      font-style: italic;
+    }
+    .project-label {
+      font-family: 'Arial', sans-serif;
+      font-size: 9pt;
+      font-weight: bold;
+      color: var(--accent);
+      margin: 7px 0 3px;
+    }
+    ul { padding-left: 16px; }
+    ul li {
+      margin-bottom: 2px;
+      font-size: 9.5pt;
+      line-height: 1.45;
+    }
+
+    /* ── Certs / Education ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 20px;
+    }
+    .entry { margin-bottom: 7px; }
+    .entry strong {
+      font-family: 'Arial', sans-serif;
+      font-size: 9.5pt;
+      display: block;
+      color: var(--accent2);
+    }
+    .entry span {
+      font-size: 9pt;
+      color: #555;
+    }
+
+    /* ── Declaration & Signature ── */
+    .declaration-section {
+      margin-top: 10px;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+    }
+    .declaration-text {
+      font-size: 9.5pt;
+      font-style: italic;
+      color: #444;
+      margin-bottom: 20px;
+    }
+    .declaration-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .declaration-place {
+      font-family: 'Arial', sans-serif;
+      font-size: 9pt;
+      color: #555;
+    }
+    .signature-block {
+      text-align: right;
+    }
+    .signature-line {
+      width: 160px;
+      border-bottom: 1px solid #555;
+      margin-bottom: 4px;
+      height: 32px;
+    }
+    .signature-label {
+      font-family: 'Arial', sans-serif;
+      font-size: 9pt;
+      color: #333;
+      display: block;
+    }
+
+    @media print {
+      @page { margin: 18mm 18mm 16mm; }
+
+      body { padding: 0; }
+      a { text-decoration: none; color: inherit; }
+
+      /* Never leave a heading or label stranded alone at the bottom of a page */
+      h2, .job-header, .project-label { break-after: avoid; }
+
+      /* Keep a project label glued to its following bullet list */
+      .project-label + ul { break-before: avoid; }
+
+      /* Small atomic units only — these are short enough to stay whole */
+      .skill-group { break-inside: avoid; }
+      .entry       { break-inside: avoid; }
+
+      /* Orphan/widow control on text — at least 2 lines stay together */
+      p, li { orphans: 2; widows: 2; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════ -->
+<header>
+  <h1>Taha Mansurbhai Zabuawala</h1>
+  <div class="headline">Senior Software Engineer &nbsp;|&nbsp; AI-First Engineering &nbsp;·&nbsp; LangChain / LangGraph &nbsp;·&nbsp; Python &amp; Java &nbsp;·&nbsp; Full-Stack</div>
+  <div class="contact">
+    Pune, India &nbsp;|&nbsp;
+    +91 8983796852 &nbsp;|&nbsp;
+    <a href="mailto:tzabuawala@gmail.com">tzabuawala@gmail.com</a>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════
+     PROFESSIONAL SUMMARY
+══════════════════════════════════════════ -->
+<section class="summary">
+  <h2>Professional Summary</h2>
+  <p>
+    Senior Software Engineer with <strong>13+ years of experience</strong> building production-grade software, with the
+    last <strong>3+ years specializing in AI-first engineering</strong> — designing, shipping, and operating LLM-powered
+    applications and agentic systems. Deep expertise in <strong>LangChain, LangGraph, multi-agent workflows, RAG
+    pipelines</strong>, and LLMOps, backed by strong full-stack backend development in <strong>Python and Java</strong>.
+  </p>
+  <p>
+    Committed to an AI-first development workflow: daily use of <strong>Claude Code, GitHub Copilot, and Cursor</strong>
+    to move faster, build fluency across the stack, and deliver secure, production-ready code. Proven ability to
+    translate complex business requirements into reliable AI-driven solutions, critically evaluate human- and
+    AI-generated code for correctness and security, and communicate technical architecture clearly to non-technical
+    stakeholders. Experienced shipping products in fast-paced, cross-functional Agile teams.
+  </p>
+</section>
+
+<!-- ══════════════════════════════════════════
+     KEY SKILLS
+══════════════════════════════════════════ -->
+<section>
+  <h2>Key Skills</h2>
+  <div class="skills-grid">
+
+    <div class="skill-group">
+      <strong>AI &amp; LLM Engineering</strong>
+      <p>LangChain, LangGraph, CrewAI &nbsp;·&nbsp; Multi-agent orchestration, function calling, tool routing &nbsp;·&nbsp; Prompt engineering &amp; structured output &nbsp;·&nbsp; Agent memory &amp; graph-based workflows &nbsp;·&nbsp; OpenAI, Anthropic Claude, Mistral, Llama, Hugging Face &nbsp;·&nbsp; Model evaluation, fine-tuning, latency optimization &nbsp;·&nbsp; MCP integrations</p>
+    </div>
+
+    <div class="skill-group">
+      <strong>AI-First Development Tooling</strong>
+      <p>Claude Code, GitHub Copilot, Cursor &nbsp;·&nbsp; AI-assisted coding, debugging &amp; architecture &nbsp;·&nbsp; Prompt design for reliable, secure code generation &nbsp;·&nbsp; Critical evaluation of AI-generated code</p>
+    </div>
+
+    <div class="skill-group">
+      <strong>Retrieval &amp; Knowledge Systems</strong>
+      <p>RAG pipelines — embeddings, chunking, reranking, hybrid retrieval &nbsp;·&nbsp; Vector databases: ChromaDB, FAISS, Pinecone &nbsp;·&nbsp; Semantic search &amp; knowledge graph reasoning</p>
+    </div>
+
+    <div class="skill-group">
+      <strong>LLMOps &amp; Observability</strong>
+      <p>LangSmith — tracing, telemetry, debugging &nbsp;·&nbsp; Prompt versioning &amp; A/B testing &nbsp;·&nbsp; Evaluation pipelines &nbsp;·&nbsp; Prometheus, Datadog, New Relic &nbsp;·&nbsp; APM &amp; performance monitoring</p>
+    </div>
+
+    <div class="skill-group">
+      <strong>Backend Engineering</strong>
+      <p>Python, Java, Spring Boot &nbsp;·&nbsp; REST API design &amp; API lifecycle management &nbsp;·&nbsp; Microservices &amp; distributed systems &nbsp;·&nbsp; Event-driven architecture &nbsp;·&nbsp; SOAP, XML, WSDL, JSON, HTTP</p>
+    </div>
+
+    <div class="skill-group">
+      <strong>Full-Stack &amp; Data</strong>
+      <p>Data modelling, business logic, UI development &nbsp;·&nbsp; PostgreSQL, MySQL, NoSQL &nbsp;·&nbsp; ETL pipelines &amp; document ingestion &nbsp;·&nbsp; SQL agents &amp; BI integrations (Grafana) &nbsp;·&nbsp; PHP/CakePHP (full-stack)</p>
+    </div>
+
+    <div class="skill-group">
+      <strong>Cloud &amp; Infrastructure</strong>
+      <p>AWS (Solutions Architect Certified), Azure, GCP &nbsp;·&nbsp; Kubernetes (CKAD Certified), Docker, Helm &nbsp;·&nbsp; Terraform, Terragrunt — IaC &nbsp;·&nbsp; EKS, GKE, AKS &nbsp;·&nbsp; SaaS platform architecture</p>
+    </div>
+
+    <div class="skill-group">
+      <strong>DevOps &amp; Practices</strong>
+      <p>GitHub Actions, GitLab CI, Jenkins &nbsp;·&nbsp; GitOps, automated deployment &nbsp;·&nbsp; Agile / Scrum &nbsp;·&nbsp; Cross-functional &amp; distributed team collaboration &nbsp;·&nbsp; On-call operations &amp; incident response &nbsp;·&nbsp; Technical leadership &amp; mentoring</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     PROFESSIONAL EXPERIENCE
+══════════════════════════════════════════ -->
+<section>
+  <h2>Professional Experience</h2>
+
+  <!-- BMC 2 -->
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Lead Product Developer – Gen AI</span>
+      <span class="job-date">January 2025 – Present</span>
+    </div>
+    <div class="job-company">BMC Software, Pune</div>
+
+    <p style="font-size:9.5pt; margin-bottom:7px; color:#333;">
+      Shipping AI-powered engineering products in Agile sprints using an AI-first workflow — Claude Code and GitHub
+      Copilot are core to daily development, code review, and architecture decisions.
+    </p>
+
+    <div class="project-label">▸ Grafana Reports Generator Agent</div>
+    <ul>
+      <li>Built an agentic AI system in <strong>Python (LangChain + LangGraph)</strong> that generates automated Grafana reports from natural language queries, replacing manual report-writing workflows</li>
+      <li>Designed multi-agent workflow with function calling for dashboard discovery, query generation, data extraction, and report formatting</li>
+      <li>Developed RAG pipeline over Grafana schemas, metrics metadata, and business rules for context-aware, hallucination-resistant report generation</li>
+      <li>Integrated with Grafana REST APIs and SQL databases for dynamic data retrieval and visualization</li>
+      <li>Applied LLMOps best practices via LangSmith — observability, tracing, prompt versioning, and agent performance monitoring</li>
+      <li>Critically reviewed AI-generated code for correctness, security vulnerabilities, and production reliability before merging</li>
+      <li>Deployed using Docker and Kubernetes in enterprise cloud environments</li>
+    </ul>
+
+    <div class="project-label">▸ Enterprise Knowledge Assistant &amp; Document Intelligence</div>
+    <ul>
+      <li>Building AI-powered enterprise knowledge assistant (LangChain + LangGraph) for documentation search and support automation</li>
+      <li>Implementing hybrid RAG pipelines with embeddings + metadata filtering using ChromaDB and FAISS</li>
+      <li>Designed end-to-end document pipeline: PDF ingestion → intelligent chunking → embeddings → vector store</li>
+      <li>Developing answer validation and hallucination reduction mechanisms for production reliability</li>
+      <li>Implementing role-based access control over indexed enterprise knowledge</li>
+    </ul>
+  </div>
+
+  <!-- Virtana -->
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Senior Software Engineer</span>
+      <span class="job-date">August 2023 – January 2025</span>
+    </div>
+    <div class="job-company">Virtana, Pune (B2B SaaS – Infrastructure Observability)</div>
+
+    <div class="project-label">▸ AI-Powered Observability &amp; Analytics Agents</div>
+    <ul>
+      <li>Led development of agentic AI solutions in <strong>Python (LangChain + LangGraph)</strong> for intelligent infrastructure analysis and natural language querying of observability data</li>
+      <li>Built RAG pipelines with vector databases for automated root cause analysis, reducing mean-time-to-diagnosis</li>
+      <li>Deployed multi-agent workflows as production REST APIs serving BI dashboards and Grafana integrations</li>
+      <li>Collaborated with cross-functional Agile teams to translate business requirements into AI-driven analytics features, presenting solutions to non-technical stakeholders</li>
+    </ul>
+
+    <div class="project-label">▸ Virtana Platform (SaaS Observability)</div>
+    <ul>
+      <li>Developed B2B SaaS observability platform backend using <strong>AWS (EKS, RDS, Lambda)</strong> with <strong>Java / Spring Boot</strong> microservices</li>
+      <li>Automated cloud infrastructure provisioning with Terraform, Kubernetes/Helm, and GitLab CI/CD pipelines</li>
+      <li>Participated in on-call rotation to maintain platform reliability, SLA adherence, and rapid incident response</li>
+    </ul>
+  </div>
+
+  <!-- Deutsche -->
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Senior Software Engineer</span>
+      <span class="job-date">February 2023 – August 2023</span>
+    </div>
+    <div class="job-company">Deutsche India Private Limited, Pune (Deutsche Bank)</div>
+
+    <div class="project-label">▸ SWIFT Payment Integration System</div>
+    <ul>
+      <li>Developed secure backend services for international SWIFT payment integration using <strong>Java and Spring Boot</strong></li>
+      <li>Built and optimized RESTful APIs for high-reliability, high-security financial transaction processing</li>
+      <li>Implemented CI/CD pipelines with Jenkins, automating deployments and reducing operational overhead</li>
+      <li>Worked in Agile sprints with geographically distributed cross-functional teams</li>
+    </ul>
+  </div>
+
+  <!-- BMC 1 -->
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Senior Software Developer</span>
+      <span class="job-date">March 2017 – February 2023</span>
+    </div>
+    <div class="job-company">BMC Software, Pune</div>
+
+    <div class="project-label">▸ TrueSight Log Analytics</div>
+    <ul>
+      <li>Built enterprise Log Analytics product for IT operations with APM and intelligent log correlation across distributed systems</li>
+      <li>Developed high-performance, scalable <strong>Java</strong> applications handling large volumes of operational event data</li>
+      <li>Designed CI/CD pipelines with Jenkins for automated testing and deployment across multiple environments</li>
+      <li>Contributed across the full development lifecycle in an Agile/Scrum environment, from data modelling to API design to deployment</li>
+    </ul>
+  </div>
+
+  <!-- eNyota -->
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Software Engineer (Full-Stack)</span>
+      <span class="job-date">October 2013 – March 2017</span>
+    </div>
+    <div class="job-company">eNyota Learning Pvt Ltd, Pune</div>
+
+    <div class="project-label">▸ E-Learning Platform</div>
+    <ul>
+      <li>Developed full-stack web applications in PHP/CakePHP — data modelling, backend business logic, and user-facing UI for a learning management system serving thousands of learners</li>
+      <li>Built course management, user tracking, and assessment modules end-to-end</li>
+    </ul>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════════
+     CERTIFICATIONS + EDUCATION
+══════════════════════════════════════════ -->
+<section>
+  <h2>Certifications &amp; Education</h2>
+  <div class="two-col">
+    <div>
+      <div class="entry">
+        <strong>AWS Certified Solutions Architect</strong>
+        <span>Amazon Web Services</span>
+      </div>
+      <div class="entry">
+        <strong>Certified Kubernetes Application Developer (CKAD)</strong>
+        <span>Cloud Native Computing Foundation</span>
+      </div>
+    </div>
+    <div>
+      <div class="entry">
+        <strong>B.Tech – Computer Science</strong>
+        <span>Rajasthan Technical University, Jaipur &nbsp;|&nbsp; 2009 – 2012</span>
+      </div>
+      <div class="entry">
+        <strong>Diploma – Computer Science</strong>
+        <span>TEB Gujarat, Dahod &nbsp;|&nbsp; 2006 – 2009</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     PERSONAL DETAILS
+══════════════════════════════════════════ -->
+<section>
+  <h2>Personal Details</h2>
+  <div class="two-col">
+    <div>
+      <div class="entry">
+        <strong>Date of Birth</strong>
+        <span>20 August 1991</span>
+      </div>
+      <div class="entry">
+        <strong>Marital Status</strong>
+        <span>Married</span>
+      </div>
+    </div>
+    <div>
+      <div class="entry">
+        <strong>Languages Known</strong>
+        <span>English, Hindi, Gujarati</span>
+      </div>
+      <div class="entry">
+        <strong>Nationality</strong>
+        <span>Indian</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     DECLARATION + SIGNATURE
+══════════════════════════════════════════ -->
+<section class="declaration-section">
+  <p class="declaration-text">
+    I hereby declare that the information mentioned above is true to the best of my knowledge &amp; belief.
+  </p>
+  <div class="declaration-footer">
+    <span class="declaration-place">Pune, Maharashtra</span>
+    <div class="signature-block">
+      <div class="signature-line"></div>
+      <span class="signature-label">Taha Mansurbhai Zabuawala</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
