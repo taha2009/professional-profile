@@ -155,6 +155,24 @@
       color: #555;
     }
 
+    /* ── Skill tags ── */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 4px;
+    }
+    .tag {
+      background: #fff;
+      border: 1px solid #b8cfe8;
+      border-radius: 3px;
+      padding: 1px 7px;
+      font-family: 'Arial', sans-serif;
+      font-size: 8.5pt;
+      color: #2a4a70;
+      white-space: nowrap;
+    }
+
     /* ── Declaration & Signature ── */
     .declaration-section {
       margin-top: 10px;
@@ -276,6 +294,7 @@
       .entry strong { font-size: 11pt; }
       .entry span   { font-size: 10.5pt; }
 
+      .tag { font-size: 10pt; padding: 2px 9px; }
       .declaration-text  { font-size: 11pt; }
       .signature-line    { width: 200px; height: 44px; }
       .signature-label   { font-size: 10.5pt; }
@@ -303,17 +322,12 @@
 <section class="summary">
   <h2>Professional Summary</h2>
   <p>
-    Senior Software Engineer with <strong>13+ years of experience</strong> building production-grade software, with the
-    last <strong>3+ years specializing in AI-first engineering</strong> — designing, shipping, and operating LLM-powered
-    applications and agentic systems. Deep expertise in <strong>LangChain, LangGraph, multi-agent workflows, RAG
-    pipelines</strong>, and LLMOps, backed by strong full-stack backend development in <strong>Python and Java</strong>.
-  </p>
-  <p>
-    Committed to an AI-first development workflow: daily use of <strong>Claude Code, GitHub Copilot, and Cursor</strong>
-    to move faster, build fluency across the stack, and deliver secure, production-ready code. Proven ability to
-    translate complex business requirements into reliable AI-driven solutions, critically evaluate human- and
-    AI-generated code for correctness and security, and communicate technical architecture clearly to non-technical
-    stakeholders. Experienced shipping products in fast-paced, cross-functional Agile teams.
+    Senior Software Engineer with <strong>13+ years of experience</strong> and 3+ years specializing in
+    <strong>AI-first engineering</strong> — designing, shipping, and operating LLM-powered applications and agentic
+    systems using LangChain, LangGraph, and RAG pipelines. Strong full-stack backend in <strong>Python and Java</strong>,
+    with daily use of <strong>Claude Code, GitHub Copilot, and Cursor</strong> to move faster and ship production-ready
+    code. AWS Certified &amp; CKAD Certified. Proven track record of translating business requirements into reliable
+    AI-driven products and shipping incrementally in cross-functional Agile teams.
   </p>
 </section>
 
@@ -326,42 +340,57 @@
 
     <div class="skill-group">
       <strong>AI &amp; LLM Engineering</strong>
-      <p>LangChain, LangGraph, CrewAI &nbsp;·&nbsp; Multi-agent orchestration, function calling, tool routing &nbsp;·&nbsp; Prompt engineering &amp; structured output &nbsp;·&nbsp; Agent memory &amp; graph-based workflows &nbsp;·&nbsp; OpenAI, Anthropic Claude, Mistral, Llama, Hugging Face &nbsp;·&nbsp; Model evaluation, fine-tuning, latency optimization &nbsp;·&nbsp; MCP integrations</p>
+      <div class="tags">
+        <span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">CrewAI</span>
+        <span class="tag">Multi-agent systems</span><span class="tag">Function calling</span>
+        <span class="tag">Prompt engineering</span><span class="tag">Structured output</span>
+        <span class="tag">OpenAI</span><span class="tag">Anthropic Claude</span><span class="tag">Mistral</span><span class="tag">Llama</span>
+        <span class="tag">MCP integrations</span>
+      </div>
     </div>
 
     <div class="skill-group">
-      <strong>AI-First Development Tooling</strong>
-      <p>Claude Code, GitHub Copilot, Cursor &nbsp;·&nbsp; AI-assisted coding, debugging &amp; architecture &nbsp;·&nbsp; Prompt design for reliable, secure code generation &nbsp;·&nbsp; Critical evaluation of AI-generated code</p>
+      <strong>Retrieval &amp; LLMOps</strong>
+      <div class="tags">
+        <span class="tag">RAG pipelines</span><span class="tag">Embeddings</span><span class="tag">Reranking</span>
+        <span class="tag">ChromaDB</span><span class="tag">FAISS</span><span class="tag">Pinecone</span>
+        <span class="tag">LangSmith</span><span class="tag">Prompt versioning</span><span class="tag">Eval pipelines</span>
+      </div>
     </div>
 
     <div class="skill-group">
-      <strong>Retrieval &amp; Knowledge Systems</strong>
-      <p>RAG pipelines — embeddings, chunking, reranking, hybrid retrieval &nbsp;·&nbsp; Vector databases: ChromaDB, FAISS, Pinecone &nbsp;·&nbsp; Semantic search &amp; knowledge graph reasoning</p>
-    </div>
-
-    <div class="skill-group">
-      <strong>LLMOps &amp; Observability</strong>
-      <p>LangSmith — tracing, telemetry, debugging &nbsp;·&nbsp; Prompt versioning &amp; A/B testing &nbsp;·&nbsp; Evaluation pipelines &nbsp;·&nbsp; Prometheus, Datadog, New Relic &nbsp;·&nbsp; APM &amp; performance monitoring</p>
+      <strong>AI Dev Tooling</strong>
+      <div class="tags">
+        <span class="tag">Claude Code</span><span class="tag">GitHub Copilot</span><span class="tag">Cursor</span>
+        <span class="tag">AI code review</span><span class="tag">Prompt design</span>
+      </div>
     </div>
 
     <div class="skill-group">
       <strong>Backend Engineering</strong>
-      <p>Python, Java, Spring Boot &nbsp;·&nbsp; REST API design &amp; API lifecycle management &nbsp;·&nbsp; Microservices &amp; distributed systems &nbsp;·&nbsp; Event-driven architecture &nbsp;·&nbsp; SOAP, XML, WSDL, JSON, HTTP</p>
-    </div>
-
-    <div class="skill-group">
-      <strong>Full-Stack &amp; Data</strong>
-      <p>Data modelling, business logic, UI development &nbsp;·&nbsp; PostgreSQL, MySQL, NoSQL &nbsp;·&nbsp; ETL pipelines &amp; document ingestion &nbsp;·&nbsp; SQL agents &amp; BI integrations (Grafana) &nbsp;·&nbsp; PHP/CakePHP (full-stack)</p>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">Java</span><span class="tag">Spring Boot</span>
+        <span class="tag">REST APIs</span><span class="tag">Microservices</span>
+        <span class="tag">Distributed systems</span><span class="tag">Event-driven</span>
+      </div>
     </div>
 
     <div class="skill-group">
       <strong>Cloud &amp; Infrastructure</strong>
-      <p>AWS (Solutions Architect Certified), Azure, GCP &nbsp;·&nbsp; Kubernetes (CKAD Certified), Docker, Helm &nbsp;·&nbsp; Terraform, Terragrunt — IaC &nbsp;·&nbsp; EKS, GKE, AKS &nbsp;·&nbsp; SaaS platform architecture</p>
+      <div class="tags">
+        <span class="tag">AWS ✦ Certified</span><span class="tag">Azure</span><span class="tag">GCP</span>
+        <span class="tag">Kubernetes ✦ CKAD</span><span class="tag">Docker</span><span class="tag">Helm</span>
+        <span class="tag">Terraform</span><span class="tag">EKS / GKE / AKS</span>
+      </div>
     </div>
 
     <div class="skill-group">
-      <strong>DevOps &amp; Practices</strong>
-      <p>GitHub Actions, GitLab CI, Jenkins &nbsp;·&nbsp; GitOps, automated deployment &nbsp;·&nbsp; Agile / Scrum &nbsp;·&nbsp; Cross-functional &amp; distributed team collaboration &nbsp;·&nbsp; On-call operations &amp; incident response &nbsp;·&nbsp; Technical leadership &amp; mentoring</p>
+      <strong>Data, DevOps &amp; Practices</strong>
+      <div class="tags">
+        <span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">NoSQL</span>
+        <span class="tag">GitHub Actions</span><span class="tag">GitLab CI</span><span class="tag">Jenkins</span>
+        <span class="tag">Agile / Scrum</span><span class="tag">On-call ops</span>
+      </div>
     </div>
 
   </div>
@@ -390,20 +419,15 @@
     <ul>
       <li>Built an agentic AI system in <strong>Python (LangChain + LangGraph)</strong> that generates automated Grafana reports from natural language queries, replacing manual report-writing workflows</li>
       <li>Designed multi-agent workflow with function calling for dashboard discovery, query generation, data extraction, and report formatting</li>
-      <li>Developed RAG pipeline over Grafana schemas, metrics metadata, and business rules for context-aware, hallucination-resistant report generation</li>
-      <li>Integrated with Grafana REST APIs and SQL databases for dynamic data retrieval and visualization</li>
-      <li>Applied LLMOps best practices via LangSmith — observability, tracing, prompt versioning, and agent performance monitoring</li>
-      <li>Critically reviewed AI-generated code for correctness, security vulnerabilities, and production reliability before merging</li>
-      <li>Deployed using Docker and Kubernetes in enterprise cloud environments</li>
+      <li>Developed RAG pipeline over Grafana schemas with LangSmith for observability, prompt versioning, and hallucination-resistant outputs</li>
+      <li>Deployed on Docker/Kubernetes; critically reviewed AI-generated code for correctness and security before merging</li>
     </ul>
 
     <div class="project-label">▸ Enterprise Knowledge Assistant &amp; Document Intelligence</div>
     <ul>
-      <li>Building AI-powered enterprise knowledge assistant (LangChain + LangGraph) for documentation search and support automation</li>
-      <li>Implementing hybrid RAG pipelines with embeddings + metadata filtering using ChromaDB and FAISS</li>
-      <li>Designed end-to-end document pipeline: PDF ingestion → intelligent chunking → embeddings → vector store</li>
-      <li>Developing answer validation and hallucination reduction mechanisms for production reliability</li>
-      <li>Implementing role-based access control over indexed enterprise knowledge</li>
+      <li>Building enterprise knowledge assistant (LangChain + LangGraph) with hybrid RAG pipelines (ChromaDB + FAISS) for documentation search and support automation</li>
+      <li>Designed end-to-end document pipeline: PDF ingestion → chunking → embeddings → vector store with hallucination reduction</li>
+      <li>Implementing role-based access control and answer validation for production reliability</li>
     </ul>
   </div>
 
