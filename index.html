@@ -71,30 +71,6 @@
     /* ── Summary ── */
     .summary p { margin-bottom: 8px; }
 
-    /* ── Skills grid ── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px 20px;
-    }
-    .skill-group {
-      background: var(--accent3);
-      border-left: 3px solid var(--accent2);
-      padding: 6px 9px;
-      border-radius: 0 3px 3px 0;
-    }
-    .skill-group strong {
-      font-family: 'Arial', sans-serif;
-      font-size: 9pt;
-      display: block;
-      margin-bottom: 4px;
-      color: var(--accent);
-    }
-    .skill-group p {
-      font-size: 9.5pt;
-      color: #333;
-      line-height: 1.5;
-    }
 
     /* ── Experience ── */
     .job { margin-bottom: 14px; }
@@ -155,22 +131,40 @@
       color: #555;
     }
 
-    /* ── Skill tags ── */
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
-      margin-top: 4px;
+    /* ── Skills table ── */
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
     }
-    .tag {
-      background: #fff;
-      border: 1px solid #b8cfe8;
-      border-radius: 3px;
-      padding: 1px 7px;
+    .skills-table tr + tr .skill-cat,
+    .skills-table tr + tr .skill-vals {
+      padding-top: 5px;
+    }
+    .skill-cat {
       font-family: 'Arial', sans-serif;
-      font-size: 8.5pt;
-      color: #2a4a70;
+      font-weight: bold;
+      font-size: 9pt;
+      color: var(--accent);
+      width: 190px;
+      padding: 2px 16px 2px 0;
+      vertical-align: top;
       white-space: nowrap;
+    }
+    .skill-vals {
+      font-size: 9.5pt;
+      color: #333;
+      padding: 2px 0;
+      line-height: 1.5;
+    }
+
+    /* ── Career Highlights ── */
+    ul.highlights {
+      padding-left: 18px;
+    }
+    ul.highlights li {
+      margin-bottom: 8px;
+      font-size: 9.5pt;
+      line-height: 1.55;
     }
 
     /* ── Declaration & Signature ── */
@@ -219,7 +213,7 @@
       .contact a { color: var(--accent2); text-decoration: underline; }
       .entry a { color: var(--accent2); text-decoration: none; }
 
-      /* Experience always starts on a fresh page so BMC Helix gets full width */
+      /* Experience always starts on a fresh page */
       #experience { break-before: page; }
 
       /* Never leave a heading or label stranded alone at the bottom of a page */
@@ -280,10 +274,8 @@
 
       .summary p  { font-size: 13pt; margin-bottom: 12px; }
 
-      .skills-grid { gap: 12px 28px; }
-      .skill-group { padding: 10px 14px; }
-      .skill-group strong { font-size: 10.5pt; margin-bottom: 5px; }
-      .skill-group p      { font-size: 11pt; line-height: 1.55; }
+      .skill-cat  { font-size: 10.5pt; width: 210px; padding-right: 20px; }
+      .skill-vals { font-size: 11pt; line-height: 1.6; }
 
       .job        { margin-bottom: 24px; }
       .job-title  { font-size: 12pt; }
@@ -299,7 +291,7 @@
       .entry strong { font-size: 11pt; }
       .entry span   { font-size: 10.5pt; }
 
-      .tag { font-size: 10pt; padding: 2px 9px; }
+      ul.highlights li { font-size: 11.5pt; margin-bottom: 10px; }
       .declaration-text  { font-size: 11pt; }
       .signature-line    { width: 200px; height: 44px; }
       .signature-label   { font-size: 10.5pt; }
@@ -341,96 +333,48 @@
 ══════════════════════════════════════════ -->
 <section>
   <h2>Key Skills</h2>
-  <div class="skills-grid">
-
-    <div class="skill-group">
-      <strong>AI &amp; LLM Engineering</strong>
-      <div class="tags">
-        <span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">CrewAI</span>
-        <span class="tag">Multi-agent systems</span><span class="tag">Function calling</span>
-        <span class="tag">Prompt engineering</span><span class="tag">Structured output</span>
-        <span class="tag">OpenAI</span><span class="tag">Anthropic Claude</span><span class="tag">Mistral</span><span class="tag">Llama</span>
-        <span class="tag">MCP integrations</span>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <strong>Retrieval &amp; LLMOps</strong>
-      <div class="tags">
-        <span class="tag">RAG pipelines</span><span class="tag">Embeddings</span><span class="tag">Reranking</span>
-        <span class="tag">ChromaDB</span><span class="tag">FAISS</span><span class="tag">Pinecone</span>
-        <span class="tag">LangSmith</span><span class="tag">Prompt versioning</span><span class="tag">Eval pipelines</span>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <strong>AI Dev Tooling</strong>
-      <div class="tags">
-        <span class="tag">Claude Code</span><span class="tag">GitHub Copilot</span><span class="tag">Cursor</span>
-        <span class="tag">AI code review</span><span class="tag">Prompt design</span>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <strong>Backend Engineering</strong>
-      <div class="tags">
-        <span class="tag">Python</span><span class="tag">Java</span><span class="tag">Spring Boot</span>
-        <span class="tag">REST APIs</span><span class="tag">Microservices</span>
-        <span class="tag">Distributed systems</span><span class="tag">Event-driven</span>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <strong>Cloud &amp; Infrastructure</strong>
-      <div class="tags">
-        <span class="tag">AWS ✦ Certified</span><span class="tag">Azure</span><span class="tag">GCP</span>
-        <span class="tag">Kubernetes ✦ CKAD</span><span class="tag">Docker</span><span class="tag">Helm</span>
-        <span class="tag">Terraform</span><span class="tag">EKS / GKE / AKS</span>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <strong>Data, DevOps &amp; Practices</strong>
-      <div class="tags">
-        <span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">NoSQL</span>
-        <span class="tag">GitHub Actions</span><span class="tag">GitLab CI</span><span class="tag">Jenkins</span>
-        <span class="tag">Agile / Scrum</span><span class="tag">On-call ops</span>
-      </div>
-    </div>
-
-  </div>
+  <table class="skills-table">
+    <tr>
+      <td class="skill-cat">AI &amp; LLM Engineering</td>
+      <td class="skill-vals">LangChain, LangGraph, CrewAI, Multi-agent systems, Function calling, Prompt engineering, Structured output, OpenAI, Anthropic Claude, Mistral, Llama, MCP integrations</td>
+    </tr>
+    <tr>
+      <td class="skill-cat">AI Dev Tooling</td>
+      <td class="skill-vals">Claude Code, GitHub Copilot, Cursor, AI-assisted code review, Prompt design for production-ready outputs</td>
+    </tr>
+    <tr>
+      <td class="skill-cat">Retrieval &amp; LLMOps</td>
+      <td class="skill-vals">RAG pipelines, Embeddings, Reranking, ChromaDB, FAISS, Pinecone, LangSmith, Prompt versioning, Eval pipelines</td>
+    </tr>
+    <tr>
+      <td class="skill-cat">Backend Engineering</td>
+      <td class="skill-vals">Python, Java, Spring Boot, REST APIs, Microservices, Distributed systems, Event-driven architecture</td>
+    </tr>
+    <tr>
+      <td class="skill-cat">Cloud &amp; Infrastructure</td>
+      <td class="skill-vals">AWS, Azure, GCP, Kubernetes, Docker, Helm, Terraform, EKS / GKE / AKS</td>
+    </tr>
+    <tr>
+      <td class="skill-cat">Data &amp; DevOps</td>
+      <td class="skill-vals">PostgreSQL, MySQL, NoSQL, GitHub Actions, GitLab CI, Jenkins, Agile / Scrum, On-call operations</td>
+    </tr>
+  </table>
 </section>
 
 <!-- ══════════════════════════════════════════
      PROFESSIONAL EXPERIENCE
 ══════════════════════════════════════════ -->
 <!-- ══════════════════════════════════════════
-     CERTIFICATIONS + EDUCATION
+     CAREER HIGHLIGHTS
 ══════════════════════════════════════════ -->
 <section>
-  <h2>Certifications &amp; Education</h2>
-  <div class="two-col">
-    <div>
-      <div class="entry">
-        <strong>AWS Certified Solutions Architect</strong>
-        <span>Amazon Web Services</span>
-      </div>
-      <div class="entry">
-        <strong>Certified Kubernetes Application Developer (CKAD)</strong>
-        <span>Cloud Native Computing Foundation</span>
-      </div>
-    </div>
-    <div>
-      <div class="entry">
-        <strong>B.Tech – Computer Science</strong>
-        <span>Rajasthan Technical University, Jaipur &nbsp;|&nbsp; 2009 – 2012</span>
-      </div>
-      <div class="entry">
-        <strong>Diploma – Computer Science</strong>
-        <span>TEB Gujarat, Dahod &nbsp;|&nbsp; 2006 – 2009</span>
-      </div>
-    </div>
-  </div>
+  <h2>Career Highlights</h2>
+  <ul class="highlights">
+    <li>Built production agentic AI systems at BMC Helix covering <strong>100+ enterprise Grafana dashboards</strong>, cutting report generation from hours to under 2 minutes — leading a team of 5 engineers from design to deployment</li>
+    <li>Designed and shipped <strong>multi-agent LLM workflows</strong> (LangChain + LangGraph) at two enterprise companies, integrating with REST APIs, SQL databases, vector stores, and BI platforms</li>
+    <li>Reduced infrastructure observability <strong>mean-time-to-diagnosis by ~40%</strong> at Virtana through RAG-powered root cause analysis agents deployed as production APIs</li>
+    <li>13+ years spanning the full stack — from Java/Spring Boot microservices and AWS infrastructure to LLM orchestration and LLMOps — with end-to-end ownership from development through Kubernetes deployment</li>
+  </ul>
 </section>
 
 <section id="experience">
@@ -442,11 +386,11 @@
       <span class="job-title">Lead Product Developer – Gen AI</span>
       <span class="job-date">January 2025 – Present</span>
     </div>
-    <div class="job-company">BMC Helix, Pune</div>
+    <div class="job-company">BMC Helix, Pune &nbsp;·&nbsp; Leading a team of 5 engineers</div>
 
     <div class="project-label">▸ Grafana Reports Generator Agent</div>
     <ul>
-      <li>Built an agentic AI system in <strong>Python (LangChain + LangGraph)</strong> that generates automated Grafana reports from natural language queries, replacing manual report-writing workflows</li>
+      <li>Built an agentic AI system in <strong>Python (LangChain + LangGraph)</strong> that generates automated Grafana reports from natural language queries, covering <strong>100+ dashboards</strong> and reducing report generation time from hours to under 2 minutes</li>
       <li>Designed multi-agent workflow with function calling for dashboard discovery, query generation, data extraction, and report formatting</li>
       <li>Developed RAG pipeline over Grafana schemas with LangSmith for observability, prompt versioning, and hallucination-resistant outputs</li>
       <li>Deployed on Docker/Kubernetes; critically reviewed AI-generated code for correctness and security before merging</li>
@@ -471,7 +415,7 @@
     <div class="project-label">▸ AI-Powered Observability &amp; Analytics Agents</div>
     <ul>
       <li>Led development of agentic AI solutions in <strong>Python (LangChain + LangGraph)</strong> for intelligent infrastructure analysis and natural language querying of observability data</li>
-      <li>Built RAG pipelines with vector databases for automated root cause analysis, reducing mean-time-to-diagnosis</li>
+      <li>Built RAG pipelines with vector databases for automated root cause analysis, reducing mean-time-to-diagnosis by ~40%</li>
       <li>Deployed multi-agent workflows as production REST APIs serving BI dashboards and Grafana integrations</li>
     </ul>
 
@@ -484,7 +428,7 @@
   </div>
 
   <!-- Deutsche -->
-  <div class="job" style="break-after: page;">
+  <div class="job">
     <div class="job-header">
       <span class="job-title">Senior Software Engineer</span>
       <span class="job-date">February 2023 – August 2023</span>
@@ -499,7 +443,7 @@
   </div>
 
   <!-- BMC 1 -->
-  <div class="job">
+  <div class="job" style="break-after: page;">
     <div class="job-header">
       <span class="job-title">Senior Software Developer</span>
       <span class="job-date">March 2017 – February 2023</span>
@@ -528,6 +472,47 @@
     </ul>
   </div>
 
+  <!-- Kalpak -->
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Web Developer</span>
+      <span class="job-date">December 2012 – October 2013</span>
+    </div>
+    <div class="job-company">Kalpak Solutions, Pune</div>
+    <ul>
+      <li>Built and maintained client web applications using PHP, HTML, and CSS</li>
+    </ul>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════════
+     CERTIFICATIONS + EDUCATION
+══════════════════════════════════════════ -->
+<section>
+  <h2>Certifications &amp; Education</h2>
+  <div class="two-col">
+    <div>
+      <div class="entry">
+        <strong>AWS Certified Solutions Architect</strong>
+        <span>Amazon Web Services</span>
+      </div>
+      <div class="entry">
+        <strong>Certified Kubernetes Application Developer (CKAD)</strong>
+        <span>Cloud Native Computing Foundation</span>
+      </div>
+    </div>
+    <div>
+      <div class="entry">
+        <strong>B.Tech – Computer Science</strong>
+        <span>Rajasthan Technical University, Jaipur &nbsp;|&nbsp; 2009 – 2012</span>
+      </div>
+      <div class="entry">
+        <strong>Diploma – Computer Science</strong>
+        <span>TEB Gujarat, Dahod &nbsp;|&nbsp; 2006 – 2009</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ══════════════════════════════════════════
