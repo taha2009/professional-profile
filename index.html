@@ -390,7 +390,8 @@
     <div class="project-label">Grafana Reports Generator Agent</div>
     <ul>
       <li>Built an agentic AI system in <strong>Python (LangChain + LangGraph)</strong> that generates automated Grafana reports from natural language queries, covering <strong>100+ dashboards</strong> and reducing report generation time from hours to under 2 minutes</li>
-      <li>Designed multi-agent workflow with function calling for dashboard discovery, query generation, data extraction, and report formatting</li>
+      <li>Designed multi-agent workflow with function calling for dashboard discovery, query generation, data extraction, and report formatting, with generated queries validated by static parsing before execution</li>
+      <li>Exposed the agent as a <strong>FastAPI</strong> service with scheduled report delivery and MCP tool integrations</li>
       <li>Developed RAG pipeline over Grafana schemas with LangSmith for tracing and observability, prompt versioning, and evaluation of outputs to produce hallucination-resistant results</li>
       <li>Packaged and deployed as a production service on Docker/Kubernetes; critically reviewed AI-generated code for correctness and security before merging</li>
     </ul>
@@ -399,15 +400,8 @@
     <ul>
       <li>Building enterprise knowledge assistant (LangChain + LangGraph) with hybrid RAG pipelines (ChromaDB + FAISS) for documentation search and support automation, with a full-stack React UI from data model to user interface</li>
       <li>Designed end-to-end document pipeline: PDF ingestion → chunking → embeddings → vector store with hallucination reduction</li>
+      <li>Enforced role-based, tenant-aware access control on retrieved content and tool calls, using LLM backends including Google Gemini</li>
       <li>Translated business requirements into AI-driven solutions and presented architecture to non-technical stakeholders</li>
-    </ul>
-
-    <div class="project-label">Multi-Tenant AI Analytics &amp; BI Platform</div>
-    <ul>
-      <li>Architected and built a multi-tenant analytics, BI and AI-assistant SaaS platform end to end: <strong>FastAPI + LangGraph (Google Gemini on Vertex AI)</strong> backend and a <strong>Next.js</strong> UI, with <strong>Auth0/JWT</strong> authentication and per-tenant role-based access</li>
-      <li>Built an AI system agent with database tools, scheduled report and prompt delivery, and Telegram/WhatsApp channels; guarded generated SQL with static query parsing and isolated each tenant's data across MongoDB and dedicated Postgres warehouses</li>
-      <li>Developed ETL pipelines and self-service per-tenant integrations (Zoho Books, Tally, WooCommerce, Google Sheets, GA4) with Alembic-managed schemas, plus tenant-configurable dashboards and a SQL report builder</li>
-      <li>Deployed on <strong>GCP Cloud Run</strong> (API service and scheduled ingestion jobs via Cloud Scheduler) with GitHub Actions CI/CD using Workload Identity Federation; enforced quality through pytest, pre-commit linting and import-boundary checks</li>
     </ul>
   </div>
 
