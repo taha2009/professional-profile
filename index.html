@@ -351,7 +351,7 @@
   <table class="skills-table">
     <tr>
       <td class="skill-cat">Agentic AI Engineering</td>
-      <td class="skill-vals">LangChain, LangGraph, CrewAI, Multi-agent systems, Function calling, Prompt engineering, Structured output, OpenAI, Anthropic Claude, Mistral, Llama, MCP integrations</td>
+      <td class="skill-vals">LangChain, LangGraph, CrewAI, Multi-agent systems, Function calling, Prompt engineering, Structured output, OpenAI, Anthropic Claude, Google Gemini, Mistral, Llama, MCP integrations</td>
     </tr>
     <tr>
       <td class="skill-cat">AI Dev Tooling</td>
@@ -363,15 +363,15 @@
     </tr>
     <tr>
       <td class="skill-cat">Backend Engineering</td>
-      <td class="skill-vals">Python, Java, Spring Boot, gRPC, REST APIs, Microservices, Distributed systems, Event-driven architecture</td>
+      <td class="skill-vals">Python, FastAPI, Java, Spring Boot, gRPC, REST APIs, Microservices, Multi-tenant architecture, Distributed systems, Event-driven architecture, React / Next.js</td>
     </tr>
     <tr>
       <td class="skill-cat">Cloud &amp; Infrastructure</td>
-      <td class="skill-vals">AWS, Azure, GCP, Kubernetes, Docker, Helm, Terraform, EKS / GKE / AKS</td>
+      <td class="skill-vals">AWS, Azure, GCP (Cloud Run, Vertex AI), Kubernetes, Docker, Helm, Terraform, EKS / GKE / AKS</td>
     </tr>
     <tr>
       <td class="skill-cat">Data &amp; DevOps</td>
-      <td class="skill-vals">PostgreSQL, MySQL, NoSQL, GitHub Actions, GitLab CI, Jenkins, Agile / Scrum, On-call operations</td>
+      <td class="skill-vals">PostgreSQL, MySQL, MongoDB, NoSQL, ETL pipelines, GitHub Actions, GitLab CI, Jenkins, Agile / Scrum, On-call operations</td>
     </tr>
   </table>
 </section>
@@ -400,6 +400,14 @@
       <li>Building enterprise knowledge assistant (LangChain + LangGraph) with hybrid RAG pipelines (ChromaDB + FAISS) for documentation search and support automation, with a full-stack React UI from data model to user interface</li>
       <li>Designed end-to-end document pipeline: PDF ingestion → chunking → embeddings → vector store with hallucination reduction</li>
       <li>Translated business requirements into AI-driven solutions and presented architecture to non-technical stakeholders</li>
+    </ul>
+
+    <div class="project-label">Multi-Tenant AI Analytics &amp; BI Platform</div>
+    <ul>
+      <li>Architected and built a multi-tenant analytics, BI and AI-assistant SaaS platform end to end: <strong>FastAPI + LangGraph (Google Gemini on Vertex AI)</strong> backend and a <strong>Next.js</strong> UI, with <strong>Auth0/JWT</strong> authentication and per-tenant role-based access</li>
+      <li>Built an AI system agent with database tools, scheduled report and prompt delivery, and Telegram/WhatsApp channels; guarded generated SQL with static query parsing and isolated each tenant's data across MongoDB and dedicated Postgres warehouses</li>
+      <li>Developed ETL pipelines and self-service per-tenant integrations (Zoho Books, Tally, WooCommerce, Google Sheets, GA4) with Alembic-managed schemas, plus tenant-configurable dashboards and a SQL report builder</li>
+      <li>Deployed on <strong>GCP Cloud Run</strong> (API service and scheduled ingestion jobs via Cloud Scheduler) with GitHub Actions CI/CD using Workload Identity Federation; enforced quality through pytest, pre-commit linting and import-boundary checks</li>
     </ul>
   </div>
 
